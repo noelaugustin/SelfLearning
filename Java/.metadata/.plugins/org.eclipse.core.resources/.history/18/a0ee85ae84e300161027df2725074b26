@@ -1,0 +1,16 @@
+public class apples {
+	
+	public int a;
+	public String b;
+	public apples nextone;
+	
+	public apples(int d1, String d2) {
+		a= d1;
+		b=d2;
+		
+	}
+	
+	public void printlink() {
+		System.out.println("{"+a+","+b+"}");
+	}
+}
