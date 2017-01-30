@@ -2,7 +2,7 @@
 """
 Created on Sun Jan 29 13:34:59 2017
 
-@author: noeln
+@author: noelaugustin
 """
 import random
 import csv
