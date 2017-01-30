@@ -2,7 +2,7 @@
 """
 Created on Sun Jan 29 11:39:13 2017
 
-@author: noeln
+@author: noelaugustin
 """
 
 import random
