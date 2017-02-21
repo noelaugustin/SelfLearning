@@ -16,6 +16,7 @@ cenx=0
 ceny=0
 cx=[]
 cy=[]
+#plt.scatter(a,b)
 
 clusterx=[]
 clustery=[]
