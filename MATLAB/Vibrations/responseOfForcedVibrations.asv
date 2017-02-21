@@ -12,11 +12,11 @@ t=0:9999;                                                                   %%ti
 t=t/100;                                                                    %%created
 u=[];                                                                       %%blank array is made to store the displacement
 
-darray=0:199                                                                %% array to store 
-darray=darray/100                                                           %%the value over which d varies
+darray=0:199                                                                %% array to store the value 
+darray=darray/100
 resp=[]
 for j=1:200                                                                %% this loop changes the value of d, and hence the force frequency
-    u=[];                                                                  %%the array is cleaned everytime the response is to be noted
+    u=[];
     d=darray(j)
     stc1=(p/k)*(1-(d)^2)/(((1-(d)^2)^2)+(2*eps*d)^2);
     stc2=(p/k)*(2*d*eps)/(((1-(d)^2)^2)+(2*eps*d)^2);
@@ -29,13 +29,13 @@ for j=1:200                                                                %% th
         st1=stc1*sin(d*wn*t(i));
         st2=stc2*cos(d*wn*t(i));
 
-        u=[u,tr1+tr2+st1-st2];                                              %%total displacment
+        u=[u,tr1+tr2+st1-st2];
     end
     
-    resp=[resp,max(u)/(p/k)];                                              %% response is the ratio between maximum displacment and the p/k value
+    resp=[resp,max(u)];
     
 end
-plot(darray,resp);                                                          %%plot the d versus response graph                                 
+plot(darray,resp);
 
 
 

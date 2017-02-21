@@ -1,0 +1,32 @@
+%%initial values
+m=1;                                                                        %% m is the mass of the body
+k=1;                                                                        %%k is the stiffness
+eps=0.0;                                                                    %% eps is the damping ratio
+d=1;                                                                        %% d is the ratio of force freq to the natural freq
+p=1;                                                                        %% p is the amplitude of the exictation force
+u0=10;                                                                      %% u0 is the initial displacement
+du0=0;                                                                      %%du0 is the initial velocity
+wn=sqrt(k/m);                                                               %%wd is the damped frequency
+wd=wn*sqrt(1-eps*eps);                                                      %%
+t=0:99999;
+t=t/100;
+u=[];
+stc1=(p/k)*(1-(d)^2)/(((1-(d)^2)^2)+(2*eps*d)^2);
+stc2=(p/k)*(2*d*eps)/(((1-(d)^2)^2)+(2*eps*d)^2);
+
+for i=1:(99999+1)
+    %%transient
+    tr1=u0*cos(wd*t(i))*exp(-eps*wn*t(i));
+    tr2=((du0+u0*eps*wn)/wd)*sin(wd*t(i))*exp(-eps*wn*t(i));
+    
+    %%steady
+    st1=stc1*sin(d*wn*t(i));
+    st2=stc2*cos(d*wn*t(i));
+    
+    u=[u,tr1+tr2+st1-st2];
+end
+plot(t,u);
+
+
+
+
