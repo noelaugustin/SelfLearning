@@ -1,8 +1,8 @@
 %%initial values
 m=1;                                                                        %% m is the mass of the body
 k=1;                                                                        %%k is the stiffness
-eps=0.0;                                                                    %% eps is the damping ratio
-d=1;                                                                        %% d is the ratio of force freq to the natural freq
+eps=0.02;                                                                    %% eps is the damping ratio
+d=.1;                                                                        %% d is the ratio of force freq to the natural freq
 p=1;                                                                        %% p is the amplitude of the exictation force
 u0=10;                                                                      %% u0 is the initial displacement
 du0=0;                                                                      %%du0 is the initial velocity
